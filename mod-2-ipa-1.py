@@ -36,8 +36,8 @@ def savings(gross_pay, tax_rate, expenses):
     x = gross_pay
     y = tax_rate
     z = expenses
-    
-    return (x-int(x*y))-z
+    import math
+    return math.floor(x-(x*y))-z
 
     savings(25_000, 0.25, 12_000)
     
@@ -115,8 +115,9 @@ def interest(principal, rate, periods):
     x = principal
     y = rate
     z = periods
+    import math
 
-    return int(x*(y*z)+x)
+    return math.floor(x*(y*z)+x)
 
     interest(20_000, 0.075, 12)
     
@@ -154,7 +155,7 @@ def body_mass_index(weight, height):
     y1 = height[0]
     y2 = height [1]
     
-    return (x*0.453592)/ ((y1*0.3048000097536)+(y2*0.025400000812799999883))**2
+    return (x*0.453592)/ (((y1*0.3048000097536)+(y2*0.025400000812799999883))**2)
             
     body_mass_index(155, [5,9])
     
