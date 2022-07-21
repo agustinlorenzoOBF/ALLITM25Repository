@@ -39,7 +39,7 @@ def savings(gross_pay, tax_rate, expenses):
     import math
     return math.floor(x-(x*y))-z
 
-    savings(25_000, 0.25, 12_000)
+
     
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -79,10 +79,9 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     z = num_jobs
     z2 = job_consumption
     s = str(x-(z*z2))
-    
     print (s+y)
     
-    material_waste(10_000, "kg", 20, 10)
+   
     
 def interest(principal, rate, periods):
     '''Interest.
@@ -116,10 +115,9 @@ def interest(principal, rate, periods):
     y = rate
     z = periods
     import math
-
     return math.floor(x*(y*z)+x)
 
-    interest(20_000, 0.075, 12)
+   
     
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -154,10 +152,8 @@ def body_mass_index(weight, height):
     x = weight
     y1 = height[0]
     y2 = height [1]
-    
     return (x*0.453592)/ (((y1*0.3048000097536)+(y2*0.025400000812799999883))**2)
-            
-    body_mass_index(155, [5,9])
+
     
 
     
