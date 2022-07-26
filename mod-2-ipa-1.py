@@ -74,12 +74,12 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    
     x = total_material
     y = material_units
     z = num_jobs
     z2 = job_consumption
-    s = str(x-(z*z2))
-    print (s+y)
+    return str(x - (z * z2)) + y
     
    
     
