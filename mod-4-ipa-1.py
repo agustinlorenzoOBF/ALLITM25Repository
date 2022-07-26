@@ -1,3 +1,11 @@
+'''Module 4: Individual Programming Assignment 1
+
+Parsing Data
+
+This assignment covers your ability to manipulate data in Python.
+'''
+
+
 def relationship_status(from_member, to_member, social_graph):
     '''Relationship Status.
     20 points.
@@ -43,6 +51,8 @@ def relationship_status(from_member, to_member, social_graph):
         return "followed by"
     else:
         return "no relationship"
+    
+    
 
 def tic_tac_toe(board):
     '''Tic Tac Toe.
@@ -149,6 +159,8 @@ def tic_tac_toe(board):
             return diagonal[0]
         
     return "NO WINNER"
+
+
 
 
 def eta(first_stop, second_stop, route_map):

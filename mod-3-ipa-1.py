@@ -1,3 +1,10 @@
+'''Module 3: Individual Programming Assignment 1
+
+Thinking Like a Programmer
+
+This assignment covers your intermediate proficiency with Python.
+'''
+
 def shift_letter(letter, shift):
     '''Shift Letter. 
     5 points.
@@ -55,7 +62,9 @@ def shift_letter(letter, shift):
             return (new_letter)
         
 
-        
+    
+    
+    
 def caesar_cipher(message, shift):
     '''Caesar Cipher. 
     10 points.
@@ -122,6 +131,8 @@ def caesar_cipher(message, shift):
     return c_cipher
         
 
+    
+    
         
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter. 
@@ -171,58 +182,38 @@ def shift_by_letter(letter, letter_shift):
     
 
 def vigenere_cipher(message, key):
-    '''Vigenere Cipher. 
-    15 points.
-    
-    Encrypts a message using a keyphrase instead of a static number.
-    Every letter in the message is shifted by the number represented by the 
-        respective letter in the key.
-    Spaces should be ignored.
-    Example:
-    vigenere_cipher("A C", "KEY") -> "K A"
-    If needed, the keyphrase is extended to match the length of the key.
-        If the key is "KEY" and the message is "LONGTEXT",
-        the key will be extended to be "KEYKEYKE".
-    Parameters
-    ----------
-    message: str
-        a string of uppercase English letters and spaces.
-    key: str
-        a string of uppercase English letters. Will never be longer than the message.
-        Will never contain spaces.
-    Returns
-    -------
-    str
-        the message, shifted appropriately.
-    '''
-    # Replace `pass` with your code. 
-    # Stay within the function. Only use the parameters as input. The function should return your answer.
-    
-    Alphabet = ["A","B","C","D","E","F","G","H","I","J",'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    orig=[]
-    shift=[]
-    shifted=[]
-    output=""
+ 
+  Alphabet = ["A","B","C","D","E","F","G","H","I","J",'K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+  orig=[]
+  shift=[]
+  shifted=[]
+  output=""
+   
+  for i in message: 
+    orig.append(i)
   
-    for i in message: 
-          orig.append(i)
-    for i in key:
-          shift.append(i)
+  for i in key:
+    shift.append(i)
   
-    for i in range(len(message)):
-        if orig[i] == " ": 
-            shifted.append(" ")
-        elif orig[i] == "_": 
-            shifted.append("_")
-        else: 
-            val = int(Alphabet.index(orig[i]) + Alphabet.index(shift[i]))
-            if val > 25:
-                val = (val-25)
-                shifted.append(Alphabet[val-1])
-            else:
-                shifted.append(Alphabet[val])
-        output= output.join(shifted)
-        return (output)
+   
+  for i in range(len(message)):
+    if orig[i] == " ": 
+      shifted.append(" ")
+    elif orig[i] == "_": 
+      shifted.append("_")
+    else: 
+      val = int(Alphabet.index(orig[i]) + Alphabet.index(shift[i]))
+      if val > 25:
+        val = (val-25)
+        shifted.append(Alphabet[val-1])
+      else:
+        shifted.append(Alphabet[val])
+  output= output.join(shifted)
+  return (output)
+
+
+
+
 
 def scytale_cipher(message, shift):
     '''Scytale Cipher.
@@ -284,6 +275,10 @@ def scytale_cipher(message, shift):
             polished += message[(i // shift) + (len(message) // shift) * (i % shift)]
         
     return ''.join(map(str, polished))
+
+
+
+
 
 def scytale_decipher(message, shift):
     '''Scytale De-cipher.
