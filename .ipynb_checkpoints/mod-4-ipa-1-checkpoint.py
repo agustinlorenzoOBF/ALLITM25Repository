@@ -1,3 +1,11 @@
+'''Module 4: Individual Programming Assignment 1
+
+Parsing Data
+
+This assignment covers your ability to manipulate data in Python.
+'''
+
+
 def relationship_status(from_member, to_member, social_graph):
     '''Relationship Status.
     20 points.
@@ -43,6 +51,8 @@ def relationship_status(from_member, to_member, social_graph):
         return "followed by"
     else:
         return "no relationship"
+    
+    
 
 def tic_tac_toe(board):
     '''Tic Tac Toe.
@@ -71,29 +81,87 @@ def tic_tac_toe(board):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     # diagonals
-    if len(set([board[element][element] for element in range(len(board))])) == 1:
-        return board[0][0]
-    elif len(set([board[element][len(board) - element - 1] for element in range(len(board))])) == 1:
-        return board[0][len(board) - 1]
+    
 
-    # rows
-    for element in range(len(board) - 1):
-        if (board[element][element] is not None) and (board[element][0] == board[element][1]) and (
-                board[element][1] == board[element][2]):
-            return board[element][element]
-        else:
-            continue
-
-    # columns
-
-    for element in range(len(board)):
-        if (board[0][element] is not None) and (board[0][element] == board[1][element]) and (
-                board[1][element] == board[2][element]):
-            return board[0][element]
-        else:
-            continue
-
+    for row in board:
+        
+        straight = True 
+        i = 0
+        
+        while (straight == True) and (i < len(row)):
+            
+            straight = row[0] == row[i]
+            i = i + 1
+        
+        if straight:
+            return row[0]
+    
+    # across column
+    
+    columns = []
+    r = 0
+    
+    for row in board:
+        
+        columns.append([])
+    
+    while len(columns[len(board[0])-1]) != len(board[0]):
+        
+        for row in board:
+        
+            columns[r].append(row[r])
+          
+            if len(columns[r]) == len(board[0]):
+                r = r + 1
+    
+    for column in columns:
+        
+        straight = True 
+        i = 0
+        
+        while (straight == True) and (i < len(column)):
+            
+            straight = column[0] == column[i]
+            i = i + 1
+        
+        if straight:
+            return column[0]
+    
+    # across diagonal
+    
+    diagonals = [[],[]]
+    r = 0
+    c = len(board[0])-1
+        
+    for row in board:
+        
+        diagonals[0].append(row[r])
+        
+        r = r + 1
+    
+    for row in board:
+        
+        diagonals[1].append(row[c])
+        
+        c = c - 1
+    
+    for diagonal in diagonals:
+        
+        straight = True 
+        i = 0
+        
+        while (straight == True) and (i < 3):
+            
+            straight = diagonal[0] == diagonal[i]
+            i = i + 1
+        
+        if straight:
+            return diagonal[0]
+        
     return "NO WINNER"
+
+
+
 
 def eta(first_stop, second_stop, route_map):
     '''ETA.
@@ -139,3 +207,6 @@ def eta(first_stop, second_stop, route_map):
             return route_map[keys[s.index(first_stop)]]['travel_time_mins'] + route_map[keys[d.index(second_stop)]]['travel_time_mins']
     else:
         return 0
+    
+    
+    

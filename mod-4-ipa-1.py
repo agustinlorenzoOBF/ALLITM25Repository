@@ -209,25 +209,4 @@ def eta(first_stop, second_stop, route_map):
         return 0
     
     
-    all_routes = list(route_map.keys())
-
-    upd_to_admu = routes[0]
-    admu_to_dlsu = routes[1]
-    dlsu_to_upd = routes[2]
     
-    time = list(route_map.values())
-    
-    upd_admu_time = time[0]['travel_time_mins']
-    
-    admu_dlsu_time = time[1]['travel_time_mins']
-    
-    dlsu_upd_time = time[2]['travel_time_mins']
-    
-    if (first_leg in upd_to_admu) & (second_leg in upd_to_admu):
-        return upd_admu_time
-    
-    elif (first_leg in admu_to_dlsu) & (second_leg in admu_to_dlsu):
-        return admu_dlsu_time
-    
-    elif (first_leg in dlsu_to_upd) & (second_leg in dlsu_to_upd):
-        return dlsu_upd_time
